@@ -1,0 +1,38 @@
+{
+  "name": "LibreDB Studio",
+  "id": "libredb-studio",
+  "available": true,
+  "port": 8547,
+  "short_desc": "Self-hosted browser based SQL IDE for 46 database engines.",
+  "description": "LibreDB Studio is an open source (MIT) database editor you run on your own server and use from a browser. There is no desktop client, so the tool sits inside the same network as your databases and a database never has to be exposed to the internet. Eighteen built in drivers reach forty six named engines: PostgreSQL, MySQL, Oracle, SQL Server, SQLite, libSQL, DuckDB, MongoDB, Redis, Couchbase, ClickHouse, Apache Druid, Elasticsearch, OpenSearch, Apache Trino, Apache Cassandra, Prometheus and Apache Kafka, plus twenty eight further engines that speak one of those wire protocols, such as TiDB, MariaDB, CockroachDB, TimescaleDB, Citus, Valkey, ScyllaDB and Redpanda. It ships a SQL editor with completion, an object browser, ER diagrams, EXPLAIN plan trees, schema comparison, query audit logs, OIDC single sign on and role based access control.",
+  "author": "LibreDB",
+  "categories": [
+    "data",
+    "development",
+    "utilities"
+  ],
+  "tipi_version": 2,
+  "version": "0.17.0",
+  "source": "https://github.com/libredb/libredb-studio",
+  "website": "https://libredb.org",
+  "exposable": true,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Admin password",
+      "hint": "Sign in as admin@libredb.org with this password. It is passed to the app as ADMIN_PASSWORD.",
+      "min": 12,
+      "max": 128,
+      "required": true,
+      "env_variable": "LIBREDB_STUDIO_ADMIN_PASSWORD"
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1788702971893,
+  "updated_at": 1791106425674,
+  "min_tipi_version": "4.5.0"
+}
