@@ -7,7 +7,9 @@
   "addLabels": [
     "renovate"
   ],
-  "enabledManagers": ["regex"],
+  "enabledManagers": [
+    "regex"
+  ],
   "automergeStrategy": "rebase",
   "customManagers": [
     {
@@ -17,6 +19,16 @@
       ],
       "matchStrings": [
         "\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\","
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^.*docker-compose\\.yml$"
+      ],
+      "matchStrings": [
+        "image:\\s*['\"]?(?<depName>[^'\"\\s:]+):(?<currentValue>[^'\"\\s]+)['\"]?"
       ],
       "datasourceTemplate": "docker"
     }
