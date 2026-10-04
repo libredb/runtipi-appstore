@@ -15,6 +15,10 @@ jobs:
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
+        with:
+          # The suite parses the compose yaml with Bun.YAML, so the runner needs a
+          # Bun that has it.
+          bun-version: latest
 
       - name: Install dependencies
         run: bun install
