@@ -38,9 +38,9 @@ product rather than summarised away.
 
 ## Read only by design
 
-Five of the eighteen drivers do not write, and the product says so instead of
-failing when a write is attempted. Apache Druid, Elasticsearch and OpenSearch are
-read only because their own SQL has no UPDATE and no CREATE TABLE in the grammar.
+Three of the eighteen are read only because their own SQL is: Apache Druid,
+Elasticsearch and OpenSearch have no UPDATE and no CREATE TABLE in the grammar at
+all, so those controls are reported as unsupported instead of failing when used.
 Prometheus speaks PromQL over its HTTP API and Studio calls none of the write or
 admin endpoints. Apache Kafka is read only by construction: Studio never produces
 a message, commits an offset, joins a consumer group or creates a topic.
