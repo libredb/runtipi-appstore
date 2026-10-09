@@ -3,8 +3,8 @@
   "id": "libredb-studio",
   "available": true,
   "port": 8547,
-  "short_desc": "Self-hosted browser based SQL IDE for 46 database engines.",
-  "description": "LibreDB Studio is an open source (MIT) database editor you run on your own server and use from a browser. There is no desktop client, so the tool sits inside the same network as your databases and a database never has to be exposed to the internet. Eighteen built in drivers reach forty six named engines: PostgreSQL, MySQL, Oracle, SQL Server, SQLite, libSQL, DuckDB, MongoDB, Redis, Couchbase, ClickHouse, Apache Druid, Elasticsearch, OpenSearch, Apache Trino, Apache Cassandra, Prometheus and Apache Kafka, plus twenty eight further engines that speak one of those wire protocols, such as TiDB, MariaDB, CockroachDB, TimescaleDB, Citus, Valkey, ScyllaDB and Redpanda. It ships a SQL editor with completion, an object browser, ER diagrams, EXPLAIN plan trees, schema comparison, query audit logs, OIDC single sign on and role based access control.",
+  "short_desc": "Self-hosted browser based SQL IDE for 54 database engines.",
+  "description": "LibreDB Studio is an open source (MIT) database editor you run on your own server and use from a browser. There is no desktop client, so the tool sits inside the same network as your databases and a database never has to be exposed to the internet. Twenty seven built in drivers reach fifty four named engines: PostgreSQL, MySQL, Oracle, Db2 LUW, SQL Server, SQLite, libSQL, DuckDB, MongoDB, Redis, Couchbase, ClickHouse, Apache Druid, Elasticsearch, OpenSearch, Apache Trino, Databend, Apache Cassandra, Prometheus, Apache Kafka, etcd, Neo4j, Milvus, Qdrant, InfluxDB (InfluxQL), InfluxDB 3 (SQL) and Oxia, plus twenty seven further engines that speak one of those wire protocols, such as MariaDB, TiDB, CockroachDB, TimescaleDB, Citus, YugabyteDB, Valkey, ScyllaDB, StarRocks, Apache Doris, Vitess, OceanBase and Redpanda. It ships a SQL editor with completion, charts and a pivot view over the result grid, masking for columns the app reads as personal data, an object browser, ER diagrams, EXPLAIN plan trees, schema comparison, query audit logs, OIDC single sign on and role based access control.",
   "author": "LibreDB",
   "categories": [
     "data",
@@ -12,7 +12,7 @@
     "utilities"
   ],
   "tipi_version": 2,
-  "version": "0.17.0",
+  "version": "0.18.2",
   "source": "https://github.com/libredb/libredb-studio",
   "website": "https://libredb.org",
   "exposable": true,
@@ -33,6 +33,6 @@
     "amd64"
   ],
   "created_at": 1788702971893,
-  "updated_at": 1791106425674,
+  "updated_at": 1791590250297,
   "min_tipi_version": "4.5.0"
 }

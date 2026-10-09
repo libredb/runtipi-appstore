@@ -1,6 +1,6 @@
 # LibreDB Studio
 
-Self-hosted browser based SQL IDE for 46 database engines.
+Self-hosted browser based SQL IDE for 54 database engines.
 
 LibreDB Studio is an open source database editor under the MIT licence that you
 run on your own server and use from a browser. There is no desktop client: the
@@ -10,17 +10,19 @@ to the internet.
 
 ## Engines
 
-Eighteen built in drivers: PostgreSQL, MySQL, Oracle, SQL Server, SQLite, libSQL,
-DuckDB, MongoDB, Redis, Couchbase, ClickHouse, Apache Druid, Elasticsearch,
-OpenSearch, Apache Trino, Apache Cassandra, Prometheus and Apache Kafka.
+Twenty seven built in drivers: PostgreSQL, MySQL, Oracle, Db2 LUW, SQL Server,
+SQLite, libSQL, DuckDB, MongoDB, Redis, Couchbase, ClickHouse, Apache Druid,
+Elasticsearch, OpenSearch, Apache Trino, Databend, Apache Cassandra, Prometheus,
+Apache Kafka, etcd, Neo4j, Milvus, Qdrant, InfluxDB (InfluxQL), InfluxDB 3 (SQL)
+and Oxia.
 
-Beyond those, twenty eight more engines have no driver of their own but speak the
-wire protocol of one of ours, which is how eighteen drivers reach forty six named
-engines. Among them: TiDB, MariaDB, Percona Server, Vitess, OceanBase,
-SingleStore, StarRocks, Apache Doris, Databend, CockroachDB, TimescaleDB, Citus,
-YugabyteDB, Materialize, RisingWave, OrioleDB, AlloyDB Omni, ParadeDB,
-Apache Cloudberry, Valkey, DragonflyDB, KeyDB, Garnet, FerretDB, ScyllaDB,
-VictoriaMetrics and Redpanda.
+Beyond those, twenty seven more engines have no driver of their own but speak the
+wire protocol of one of ours, which is how twenty seven drivers reach fifty four
+named engines. Among them: MariaDB, Percona Server for MySQL, Percona Distribution
+for PostgreSQL, TiDB, Vitess, OceanBase, SingleStore, StarRocks, Apache Doris,
+CockroachDB, TimescaleDB, Citus, YugabyteDB, Materialize, RisingWave, OrioleDB,
+AlloyDB Omni, ParadeDB, Apache Cloudberry, Valkey, DragonflyDB, KeyDB, Garnet,
+FerretDB, ScyllaDB, VictoriaMetrics and Redpanda.
 
 ## What is measured, not claimed
 
@@ -30,24 +32,31 @@ all of that comes from each engine's own system catalogue rather than from the
 protocol. The protocol can be identical while the catalogue is completely
 different, so the connection succeeds and the screen opens empty.
 
-Every one of the twenty eight borrowed engines was therefore run through the same
-screens before any number was published. Of the twenty eight, eighteen answered on
-every surface, nine answered partially, and on one only the query editor worked.
-The per engine result, including which screen fails and why, is published with the
-product rather than summarised away.
+Every one of the twenty seven borrowed engines was therefore run through the same
+screens before any number was published. Of the twenty seven, eighteen answered on
+every surface and nine answered in part, usually missing row counts, sizes and the
+monitoring panels. The per engine result, including which screen fails and why, is
+published with the product rather than summarised away.
 
 ## Read only by design
 
-Three of the eighteen are read only because their own SQL is: Apache Druid,
-Elasticsearch and OpenSearch have no UPDATE and no CREATE TABLE in the grammar at
-all, so those controls are reported as unsupported instead of failing when used.
-Prometheus speaks PromQL over its HTTP API and Studio calls none of the write or
-admin endpoints. Apache Kafka is read only by construction: Studio never produces
-a message, commits an offset, joins a consumer group or creates a topic.
+Eleven of the twenty seven drivers are read only.
+
+Three because their own query language is: Apache Druid, Elasticsearch and
+OpenSearch have no UPDATE and no CREATE TABLE in the grammar at all, so those
+controls are reported as unsupported instead of failing when used.
+
+Eight because Studio only ever reads them. Prometheus speaks PromQL over its HTTP
+API and Studio calls none of the write or admin endpoints. Apache Kafka is read
+only by construction: Studio never produces a message, commits an offset, joins a
+consumer group or creates a topic. The same holds for Neo4j, Milvus, Qdrant, Oxia
+and both InfluxDB connection types.
 
 ## Features
 
 - SQL editor with completion, history and saved queries
+- Charts and a pivot view over the result grid, without leaving the tab
+- Masking for columns the app reads as personal data, until you unmask them
 - Object browser for schemas, tables, indexes, keys and views
 - ER diagrams and schema comparison between two databases
 - EXPLAIN plan trees with cost and row estimates
