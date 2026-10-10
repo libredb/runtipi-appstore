@@ -40,17 +40,17 @@ published with the product rather than summarised away.
 
 ## Read only by design
 
-Eleven of the twenty seven drivers are read only.
+Ten of the twenty seven drivers are read only.
 
 Three because their own query language is: Apache Druid, Elasticsearch and
 OpenSearch have no UPDATE and no CREATE TABLE in the grammar at all, so those
 controls are reported as unsupported instead of failing when used.
 
-Eight because Studio only ever reads them. Prometheus speaks PromQL over its HTTP
+Seven because Studio only ever reads them. Prometheus speaks PromQL over its HTTP
 API and Studio calls none of the write or admin endpoints. Apache Kafka is read
 only by construction: Studio never produces a message, commits an offset, joins a
-consumer group or creates a topic. The same holds for Neo4j, Milvus, Qdrant, Oxia
-and both InfluxDB connection types.
+consumer group or creates a topic. The same holds for Neo4j, Qdrant, Oxia and both
+InfluxDB connection types.
 
 ## Features
 
