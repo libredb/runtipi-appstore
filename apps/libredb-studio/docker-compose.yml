@@ -1,6 +1,6 @@
 services:
   libredb-studio:
-    image: 'libredb/libredb-studio:0.18.2'
+    image: 'libredb/libredb-studio:0.18.3'
     environment:
       - ADMIN_PASSWORD=${LIBREDB_STUDIO_ADMIN_PASSWORD}
     volumes:
